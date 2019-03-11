@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Lesson03Controller
 {
     @RequestMapping("/03")
-    public static String lesson03()
+    public String lesson03()
     {
 
         return("lesson03");
+
     }
+
 }
