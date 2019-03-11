@@ -4,10 +4,8 @@ import com.javabootcamp.main.objects.TVshow;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 
 @Controller
@@ -20,7 +18,7 @@ public class Lesson07Controller
         return("lesson07");
     }
     @PostMapping("/07")
-    public String lesson07confirm(@Valid TVshow tvshow, BindingResult result,Model model)
+    public String lesson07confirm(@Valid @ModelAttribute("tvshow") TVshow tvshow, BindingResult result, Model model)
     {
         if (result.hasErrors())
         {
