@@ -13,8 +13,8 @@ public class Lesson04ExtraController
     @RequestMapping("/04extra")
     public String lesson04(Model model)
     {
-        LoginData login = new LoginData();
-        model.addAttribute("login", login);
+        //LoginData login = new LoginData();
+        model.addAttribute("login",new LoginData());
 
         return("lesson04extra");
     }
