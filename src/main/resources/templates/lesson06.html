@@ -5,12 +5,11 @@
     <title>Lesson 06</title>
 </head>
 <body>
-    <form action="#" th:action="@{/06}" th:object="${song}" method="post">
-        Name: <input type="text" th:field="*{name}"/> <br>
-        Artist: <input type="text" th:field="*{artist}"/><br>
-        Album: <input type="text" th:field="*{album}"/><br>
-        Rating: <input type="text" th:field="*{rating}"/><br>
-        Year: <input type="text" th:field="*{year}"/><br>
+    <form action="#" th:action="@{/06}" th:object="${employee}" method="post">
+        First Name: <input type="text" th:field="*{firstName}"/> <br>
+        Last Name: <input type="text" th:field="*{lastName}"/> <br>
+        SSN: <input type="text" th:field="*{socialSecurityNumber}"/> <br>
+        Date of Birth: <input type="date" th:field="*{dateOfBirth}"/> <br>
         <input type="submit" value="Submit" />
 
     </form>

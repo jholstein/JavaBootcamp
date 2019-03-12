@@ -1,5 +1,6 @@
 package com.javabootcamp.main;
 
+import com.javabootcamp.main.objects.Car;
 import com.javabootcamp.main.objects.TVshow;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,18 +15,18 @@ public class Lesson07Controller
     @GetMapping("/07")
     public String lesson07(Model model)
     {
-        model.addAttribute("tvshow", new TVshow());
+        model.addAttribute("car", new Car());
         return("lesson07");
     }
     @PostMapping("/07")
-    public String lesson07confirm(@Valid @ModelAttribute("tvshow") TVshow tvshow, BindingResult result, Model model)
+    public String lesson07confirm(@Valid @ModelAttribute("car") Car car, BindingResult result, Model model)
     {
         if (result.hasErrors())
         {
-            model.addAttribute("tvshow",tvshow);
+            model.addAttribute("car",car);
             return "lesson07";
         }
-        model.addAttribute("tvshow",tvshow);
+        model.addAttribute("car",car);
         return "lesson07confirm";
     }
 }

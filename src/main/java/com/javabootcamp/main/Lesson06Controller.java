@@ -1,5 +1,6 @@
 package com.javabootcamp.main;
 
+import com.javabootcamp.main.objects.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,13 +12,13 @@ public class Lesson06Controller
     @GetMapping("/06")
     public String lesson04Get(Model model)
     {
-        model.addAttribute("song",new Song());
+        model.addAttribute("employee",new Employee());
         return("lesson06");
     }
     @PostMapping("/06")
-    public String lesson04Post(@ModelAttribute Song song, Model model)
+    public String lesson04Post(@ModelAttribute Employee employee, Model model)
     {
-        model.addAttribute("song",song);
+        model.addAttribute("employee",employee);
         return("lesson06confirm");
     }
 

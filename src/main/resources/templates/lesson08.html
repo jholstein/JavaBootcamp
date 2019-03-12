@@ -1,0 +1,62 @@
+<!--
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 08</title>
+</head>
+<body>
+    <form action="#" th:action="@{/08}" th:object="${dog}" method="post">
+        Name: <input type="text" th:field="*{name}"/> <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br>
+        Age: <input type="text" th:field="*{age}"/> <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span><br>
+        <input type ="submit" value="Submit" />
+
+    </form>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 08</title>
+</head>
+<body>
+<p th:if="${dog.id!=0}" th:inline="text">
+    The dog's ID is [[${dog.id}]].<br>
+    The dog's name is [[${dog.name}]].<br>
+    They are [[${dog.age}]] years old.<br>
+
+
+
+</p>
+
+
+<form action="#" th:action="@{/08}" th:object="${dog}" method="post">
+    Name: <input type="text" th:field="*{name}"/> <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br>
+    Age: <input type="text" th:field="*{age}"/> <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span><br>
+    <input type ="submit" value="Submit" />
+
+</form>
+
+<br><br>
+
+<table border="1" style="width:100%">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    <tbody>
+    <tr th:if="${dogs==null}">
+        <td colspan="2"> No Dogs in Database </td>
+    </tr>
+    <tr th:each="d : ${dogs}">
+        <td><span th:text="${d.id}"> ID </span></td>
+        <td><span th:text="${d.name}"> Name </span></td>
+        <td><span th:text="${d.age}"> Age </span></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
