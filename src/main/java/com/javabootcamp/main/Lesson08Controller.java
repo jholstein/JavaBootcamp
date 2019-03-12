@@ -25,9 +25,6 @@ public class Lesson08Controller
     @Autowired
     DogRepository dogRepository;
 
-    //Iterable<Dog> dogs;
-
-
 
     @GetMapping("/08")
     public String lesson08(Model model)
@@ -42,21 +39,15 @@ public class Lesson08Controller
         if (result.hasErrors())
         {
 
-            //model.addAttribute("dog",dog);
             model.addAttribute("dogs",dogRepository.findAll());
 
 
             return "lesson08confirm";
         }
-        //dogs.add(dog);
-        //dogs.add(new Dog());
+
+
         dogRepository.save(dog);
 
-        for(Dog d: dogRepository.findAll()) {
-            System.out.println(d.getName());
-        }
-
-        //dogs = dogRepository.findAll();
 
         model.addAttribute("dog",dog);
         model.addAttribute("dogs",dogRepository.findAll());

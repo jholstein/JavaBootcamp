@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 10</title>
+</head>
+<body>
+
+<h2>Lesson 10 - Update Page</h2>
+
+
+<form action="#" th:action="@{/10/finalizeupdate/{id}(id =${task.id})}" th:object="${task}" method="post" id=createTaskForm>
+    Name: <input type="text" th:value="${task.name}" th:field="*{name}"/> <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br>
+    Priority:
+    <select th:value="${task.priority}" th:field="*{priority}">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+    </select><br>
+    Due Date: <input type="date" th:value="${task.dueDate}" th:field="*{dueDate}"/> <span th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}"></span><br>
+    <input type ="submit" value="Save" />
+
+</form>
+
+<br><br>
+
+
+
+</body>
+</html>
