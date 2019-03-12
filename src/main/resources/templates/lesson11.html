@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 11</title>
+</head>
+<body>
+
+<h2>Lesson 11</h2>
+
+<form action="#" th:action="@{/11}" th:object="${car}" method="post" id=createTaskForm>
+    Name: <input type="text" th:field="*{name}"/> <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br>
+    Type: <input type="text" th:field="*{type}"/> <span th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></span><br>
+    Description: <input type="text" th:field="*{description}"/> <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br>
+    Year: <input type="text" th:field="*{year}"/> <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></span><br>
+    Make: <input type="text" th:field="*{make}"/> <span th:if="${#fields.hasErrors('make')}" th:errors="*{make}"></span><br>
+    Model: <input type="text" th:field="*{model}"/> <span th:if="${#fields.hasErrors('model')}" th:errors="*{model}"></span><br>
+
+    <input type ="submit" value="Submit" />
+
+</form>
+
+<br><br>
+
+<table border="1" style="width:100%">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Year</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Description</th>
+    </tr>
+    <tbody>
+    <tr th:if="${cars==null}">
+        <td colspan="2"> No Tasks in Database </td>
+    </tr>
+    <tr th:each="c : ${cars}">
+        <td><span th:text="${c.id}"> ID </span></td>
+        <td><span th:text="${c.name}"> Name </span></td>
+        <td><span th:text="${c.type}"> Type </span></td>
+        <td><span th:text="${c.year}"> Year </span></td>
+        <td><span th:text="${c.make}"> Make </span></td>
+        <td><span th:text="${c.model}"> Model </span></td>
+        <td><span th:text="${c.description}"> Description </span></td>
+
+
+
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
