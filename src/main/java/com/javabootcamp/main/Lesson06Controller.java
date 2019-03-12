@@ -10,13 +10,13 @@ import com.javabootcamp.main.objects.Song;
 public class Lesson06Controller
 {
     @GetMapping("/06")
-    public String lesson04Get(Model model)
+    public String lesson06Get(Model model)
     {
         model.addAttribute("employee",new Employee());
         return("lesson06");
     }
     @PostMapping("/06")
-    public String lesson04Post(@ModelAttribute Employee employee, Model model)
+    public String lesson06Post(@ModelAttribute Employee employee, Model model)
     {
         model.addAttribute("employee",employee);
         return("lesson06confirm");
