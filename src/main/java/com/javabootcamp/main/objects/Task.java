@@ -1,5 +1,6 @@
 package com.javabootcamp.main.objects;
 
+import com.javabootcamp.main.validation.CheckDateInFuture;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.Entity;
@@ -25,10 +26,15 @@ public class Task
     private String name;
 
     @NotBlank
+    @CheckDateInFuture
     private String dueDateString;
 
 
     private LocalDate dueDate;
+
+
+
+    private String taskContent;
 
 
 
@@ -86,5 +92,12 @@ public class Task
     public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
 
+    }
+    public String getTaskContent() {
+        return taskContent;
+    }
+
+    public void setTaskContent(String taskContent) {
+        this.taskContent = taskContent;
     }
 }

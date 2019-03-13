@@ -40,7 +40,9 @@ public class Lesson15Controller
 
         if (result.hasErrors())
         {
+            //|| LocalDate.now().compareTo(task.getDueDate()) > 0
             System.out.println("HAS ERROR");
+            System.out.println(result.getAllErrors());
             model.addAttribute("tasks",taskRepository.findAll());
             return "lesson15";
         }

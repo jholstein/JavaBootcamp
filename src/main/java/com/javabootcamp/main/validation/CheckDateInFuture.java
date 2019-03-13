@@ -16,12 +16,12 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 public @interface CheckDateInFuture {
 
-    String message() default "{message.key}";
+    String message() default "Please Select a Date in the Future";
 
     Class<?>[] groups() default { };
 
     Class<? extends Payload>[] payload() default { };
 
-    String pattern();
+    //String pattern();
 
 }
