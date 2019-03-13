@@ -7,6 +7,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Date;
 
 @Entity
 public class Task
@@ -19,7 +25,12 @@ public class Task
     private String name;
 
     @NotBlank
-    private String dueDate;
+    private String dueDateString;
+
+
+    private LocalDate dueDate;
+
+
 
     @Min(1)
     @Max(5)
@@ -27,10 +38,10 @@ public class Task
 
     public Task() { }
 
-    public Task(String name,String dueDate,int priority)
+    public Task(String name,String dueDateString,int priority)
     {
         this.name = name;
-        this.dueDate = dueDate;
+        this.dueDateString = dueDateString;
         this.priority = priority;
     }
 
@@ -50,12 +61,12 @@ public class Task
         this.name = name;
     }
 
-    public String getDueDate() {
-        return dueDate;
+    public String getDueDateString() {
+        return dueDateString;
     }
 
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
+    public void setDueDateString(String dueDateString) {
+        this.dueDateString = dueDateString;
     }
 
     public int getPriority() {
@@ -64,5 +75,16 @@ public class Task
 
     public void setPriority(int priority) {
         this.priority = priority;
+    }
+
+    public LocalDate getDueDate() {
+
+
+        return  LocalDate.parse(this.getDueDateString(), DateTimeFormatter.ISO_LOCAL_DATE);
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+
     }
 }
