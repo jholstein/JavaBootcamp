@@ -8,7 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-<div th:replace="navbar :: navbar"></div>
+<div>
+    <div th:replace="navbar :: navbar"></div>
+
+
+    <div class="jumbotron text-center" style="margin-top: 2.5%">
+        <h1>Lesson 8 - Persisting to Database</h1>
+    </div>
+</div>
 <p th:if="${dog.id!=0}" th:inline="text">
     The dog's ID is [[${dog.id}]].<br>
     The dog's name is [[${dog.name}]].<br>

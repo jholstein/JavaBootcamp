@@ -7,9 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-<div th:replace="navbar :: navbar"></div>
-<h2>Lesson 10 - Update Page</h2>
+<div>
+    <div th:replace="navbar :: navbar"></div>
 
+
+    <div class="jumbotron text-center" style="margin-top: 2.5%">
+        <h1>Lesson 10 - Complete Data Lifecycle</h1>
+    </div>
+</div>
 
 <form action="#" th:action="@{/10/finalizeupdate/{id}(id =${task.id})}" th:object="${task}" method="post" id=createTaskForm>
     Name: <input type="text" th:value="${task.name}" th:field="*{name}"/> <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br>

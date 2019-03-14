@@ -7,7 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-<div th:replace="navbar :: navbar"></div>
+<div>
+    <div th:replace="navbar :: navbar"></div>
+
+
+    <div class="jumbotron text-center" style="margin-top: 2.5%">
+        <h1>Lesson 14 - Uploading Images With Cloudinary</h1>
+    </div>
+</div>
     <form action="#" th:action="@{/14/add}" th:object="${actor}" method="post" enctype="multipart/form-data">
         Name: <input type="text" th:field="*{name}"/> <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br>
         Real Name: <input type="text" th:field="*{realName}"/> <span th:if="${#fields.hasErrors('realName')}" th:errors="*{realName}"></span><br>

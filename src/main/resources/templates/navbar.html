@@ -5,64 +5,59 @@
     <title>Lesson 15</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
 </head>
 <body>
 
-<nav class="navbar bg-dark navbar-dark" th:fragment="navbar">
+
+<nav class="navbar bg-dark navbar-dark fixed-top navbar-expand-lg" style="height: 5%;" th:fragment="navbar">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <!--<a class="nav-link ml-auto" href="/signup">Sign Up</a> <a class="nav-link ml-auto" href="/login">Login</a>-->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Lessons
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/01">Lesson 1</a>
+                    <a class="dropdown-item" href="/02">Lesson 2</a>
+                    <a class="dropdown-item" href="/03">Lesson 3</a>
+                    <a class="dropdown-item" href="/04">Lesson 4</a>
+                    <a class="dropdown-item" href="/05">Lesson 5</a>
+                    <a class="dropdown-item" href="/06">Lesson 6</a>
+                    <a class="dropdown-item" href="/07">Lesson 7</a>
+                    <a class="dropdown-item" href="/08">Lesson 8</a>
+                    <a class="dropdown-item" href="/09">Lesson 9</a>
+                    <a class="dropdown-item" href="/10">Lesson 10</a>
+                    <a class="dropdown-item" href="/11">Lesson 11</a>
+                    <a class="dropdown-item" href="/12">Lesson 12</a>
+                    <a class="dropdown-item" href="/13">Lesson 13</a>
+                    <a class="dropdown-item" href="/14">Lesson 14</a>
+                    <a class="dropdown-item" href="/15">Lesson 15</a>
+                </div>
+            </li>
+
+        </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/01">Lesson 1</a>
+                <a class="nav-link" href="{{ url('/login') }}">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/02">Lesson 2</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/03">Lesson 3</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/04">Lesson 4</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/05">Lesson 5</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/06">Lesson 6</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/07">Lesson 7</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/08">Lesson 8</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/09">Lesson 9</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/10">Lesson 10</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/11">Lesson 11</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/12">Lesson 12</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/13">Lesson 13</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/14">Lesson 14</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/15">Lesson 15</a>
+                <a class="nav-link" href="{{ url('/register') }}">Register</a>
             </li>
         </ul>
+
     </div>
+
+
 </nav>
+
+
 
 
 

@@ -7,7 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-<div th:replace="navbar :: navbar"></div>
+<div>
+    <div th:replace="navbar :: navbar"></div>
+
+
+    <div class="jumbotron text-center" style="margin-top: 2.5%">
+        <h1>Lesson 14 - Uploading Images With Cloudinary</h1>
+    </div>
+</div>
 <a href="/14/add">Add a new actor</a>
     <div th:each="actor : ${actors}">
         <div th:if="${actor.headshot}!=null">

@@ -7,7 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-<div th:replace="navbar :: navbar"></div>
+<div>
+    <div th:replace="navbar :: navbar"></div>
+
+
+    <div class="jumbotron text-center" style="margin-top: 2.5%">
+        <h1>Lesson 12 - Using Page Fragments</h1>
+    </div>
+</div>
 
     <div th:replace="lesson12base :: header"></div>
     <div th:replace="lesson12base :: navlinks"></div>

@@ -7,8 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-<div th:replace="navbar :: navbar"></div>
-<h2>Lesson 11</h2>
+<div>
+    <div th:replace="navbar :: navbar"></div>
+
+
+    <div class="jumbotron text-center" style="margin-top: 2.5%">
+        <h1>Lesson 11 - Car Database</h1>
+    </div>
+</div>
 
 <form action="#" th:action="@{/11}" th:object="${car}" method="post" id=createTaskForm>
     Name: <input type="text" th:field="*{name}"/> <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br>

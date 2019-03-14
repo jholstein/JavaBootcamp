@@ -7,7 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-<div th:replace="navbar :: navbar"></div>
+<div>
+    <div th:replace="navbar :: navbar"></div>
+
+
+    <div class="jumbotron text-center" style="margin-top: 2.5%">
+        <h1>Lesson 7 - Validating Forms</h1>
+    </div>
+</div>
     <form action="#" th:action="@{/07}" th:object="${car}" method="post">
         Name: <input type="text" th:field="*{name}"/> <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br>
         Type: <input type="text" th:field="*{type}"/> <span th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></span><br>
